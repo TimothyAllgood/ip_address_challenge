@@ -95,6 +95,32 @@ const top100 = () => {
 };
 
 // Calls our function
-console.time('top');
-console.log(top100());
-console.timeEnd('top');
+// console.time('top');
+// console.log(top100());
+// console.timeEnd('top');
+
+const clear = () => {
+	// Time Complexity O(n)
+
+	// Get time when this is called
+	const now = new Date();
+
+	// Get time until 10 a.m
+	let timeUntilMorning =
+		new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 0, 0, 0) -
+		now;
+
+	// If the time is less than 0 we add 24 hours in milliseconds to our negative amount giving us the time until 10 am in ms
+	if (timeUntilMorning < 0) {
+		timeUntilMorning += 86400000;
+	}
+
+	// Sets a timeout, once time until morning reaches 0 ms the callback function will be called, which empties our ip array
+	setTimeout(() => {
+		allIpAddresses = [];
+	}, timeUntilMorning);
+	return now;
+};
+
+// Calls our clear function
+clear();
