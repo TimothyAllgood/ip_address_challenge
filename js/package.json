@@ -1,0 +1,12 @@
+{
+  "name": "ip_address_challenge",
+  "version": "1.0.0",
+  "description": "Challenge issued by eVisit",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Timothy Allgood",
+  "license": "ISC"
+}
